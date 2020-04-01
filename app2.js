@@ -175,9 +175,10 @@ var app = new Vue({
                     if (json.success) {
                         console.log(json)
                         this.users.push(json.user)
+                        this.formReset()
                     } else {
                         // error occured
-                        console.log(json);
+                        console.log(json)
                     }
                 })
 
