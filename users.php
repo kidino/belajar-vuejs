@@ -2,7 +2,7 @@
 
 include('dbmodel.php');
 
-$conn = new dbconnection('127.0.0.1', 'root', '', 'my_app');
+$conn = new dbconnection('127.0.0.1', 'root', '', 'bvue');
 $ut = new dbmodel($conn);
 
 $ut->idcol = 'id';
@@ -41,6 +41,7 @@ switch(@$_GET['action']) {
         break;
     default:
         $users = $ut->get_all();
+        if (!$users) $users = [];
         echo json_encode($users);
         break;
 }

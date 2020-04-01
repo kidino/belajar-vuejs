@@ -56,7 +56,9 @@ Vue.component('user-form', {
 });
 
 Vue.component('user-table', {
-    props: { users: Array },
+    props: {
+        users: { type: Array, default: [] }
+    },
     template: `                <table id="user-table" class="table table-sm table-hover">
                     <thead>
                         <tr>
